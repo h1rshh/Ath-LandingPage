@@ -53,7 +53,7 @@ function Navbar() {
                   href={link.href}
                   // `transition-colors` makes the hover effect smooth.
                   // `hover:text-red-500` applies the red color on hover.
-                  className="text-gray-300 hover:text-red-500 transition-colors duration-300 font-bold"
+                  className="text-white hover:text-red-500 transition-colors duration-300 font-bold"
                 >
                   {link.title}
                 </a>
@@ -112,7 +112,7 @@ function Navbar() {
           </div>
           {/* We also include the "Get Started" button in the mobile menu for consistency. */}
           <div className="pt-4 pb-3 px-2">
-             <button className="w-full bg-white text-black font-semibold py-2 px-5 rounded-lg hover:bg-red-600 hover:text-white transition-all duration-300 font-semibold">
+            <button className="w-full bg-white text-black font-semibold py-2 px-5 rounded-lg hover:bg-red-600 hover:text-white transition-all duration-300 font-semibold">
               Get Started
             </button>
           </div>
