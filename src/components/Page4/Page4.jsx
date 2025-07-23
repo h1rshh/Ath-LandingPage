@@ -33,16 +33,18 @@ const Page4 = () => {
   };
 
   return (
-    <div className="relative bg-black py-24 overflow-hidden">
+    <div className="relative bg-[#1a1a1a] pt-70 pb-20 overflow-visible w-full">
       {/* Slides wrapper */}
-      <div className="flex justify-center items-center space-x-6">
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-4 px-2 z-30">
+
         {visibleSlides(currentIndex).map((i, idx) => (
           <div
             key={i}
-            className={`relative flex-shrink-0 rounded-2xl flex justify-center items-center transition-all duration-500
+            className={`relative flex-shrink-0 rounded-2xl flex justify-center items-center transition-all duration-700 ease-in-out
     ${i === currentIndex
-                ? 'w-[330px] h-[200px] scale-110 z-20 -mt-10 shadow-2xl'
-                : 'w-[220px] h-[200px] scale-90 z-10 mt-0'}
+                ? 'w-[40vw] h-[45vh] scale-110 z-20 -translate-y-6 shadow-2xl'
+                : 'w-[25vw] h-[40vh] scale-95 z-10 translate-y-2'}
+
   `}
             style={{
               background: i === currentIndex
@@ -53,8 +55,11 @@ const Page4 = () => {
             <img
               src={slides[i].image}
               alt={`Slide ${i}`}
-              className="h-full object-contain"
+              className={`object-contain transition-all duration-500
+    ${i === currentIndex ? 'w-[500vw] h-[500vw] scale-125 z-50' : 'w-[100vw] h-[100vw]'}
+  `}
             />
+
           </div>
 
 
