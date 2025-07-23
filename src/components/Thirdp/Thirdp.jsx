@@ -39,12 +39,10 @@ const Thirdp = () => {
   const getIndex = (offset) => (current + offset + slides.length) % slides.length;
 
   return (
-    <section
-      className="relative w-full h-screen bg-black flex items-center justify-center overflow-hidden"
-    >
+    <section className="relative w-full h-[120vh] bg-black flex items-center justify-center overflow-visible">
 
       <div
-        className="absolute inset-0 bg-cover bg-center scale-150"
+        className="absolute inset-0 bg-cover bg-center scale-100"
         style={{ backgroundImage: `url(${connectBg})` }}
       />
       {/* <div className="absolute inset-0 bg-black bg-opacity-70" /> */}
