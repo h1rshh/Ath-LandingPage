@@ -1,23 +1,22 @@
 import React from 'react';
-<<<<<<< Updated upstream
 import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Hero from './components/Hero/Hero.jsx';
-=======
-import Navbar from './components/Navbar.jsx';
-import Home from './components/Home.jsx';
->>>>>>> Stashed changes
+import Home from './components/Home/Home.jsx';
+import Thirdp from './components/Thirdp/Thirdp.jsx';
+import Page4 from './components/Page4/Page4.jsx';
+import About from './components/About/About.jsx';
 
 const App = () => {
   return (
     <>
       <Navbar />
-<<<<<<< Updated upstream
+      <Home />
+      <About />
+      <Thirdp />
+      <Page4 />
       <Hero />
       <Footer />
-=======
-      <Home />
->>>>>>> Stashed changes
 
     </>
   )
