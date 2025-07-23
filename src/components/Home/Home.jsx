@@ -7,7 +7,20 @@ const Home = () => {
       className="relative h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4 font-inter">
+      {/* First overlay - Red with reduced opacity */}
+      <div
+        className="absolute inset-0"
+        style={{ background: `rgba(166, 13, 13, 0.4)` }}
+      ></div>
+
+      {/* Second overlay - Black */}
+      <div
+        className="absolute inset-0"
+        style={{ background: `rgba(0, 0, 0, 0.3)` }}
+      ></div>
+
+      {/* Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 font-inter">
         <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
           From Passion to Profession<br />
           From Field to Future

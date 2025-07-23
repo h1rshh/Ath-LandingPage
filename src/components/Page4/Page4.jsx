@@ -34,18 +34,34 @@ const Page4 = () => {
 
   return (
     <div className="relative bg-[#1a1a1a] pt-70 pb-20 overflow-visible w-full">
+      {/* Add CSS animation styles */}
+      <style jsx>{`
+        @keyframes slideUpIn {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        
+        .slide-up-animation {
+          animation: slideUpIn 0.6s ease-out;
+        }
+      `}</style>
+
       {/* Slides wrapper */}
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-4 px-2 z-30">
-
         {visibleSlides(currentIndex).map((i, idx) => (
           <div
             key={i}
             className={`relative flex-shrink-0 rounded-2xl flex justify-center items-center transition-all duration-700 ease-in-out
-    ${i === currentIndex
+              ${i === currentIndex
                 ? 'w-[40vw] h-[45vh] scale-110 z-20 -translate-y-6 shadow-2xl'
                 : 'w-[25vw] h-[40vh] scale-95 z-10 translate-y-2'}
-
-  `}
+            `}
             style={{
               background: i === currentIndex
                 ? 'linear-gradient(to bottom, #FF4C4C, #C80505)'
@@ -56,19 +72,19 @@ const Page4 = () => {
               src={slides[i].image}
               alt={`Slide ${i}`}
               className={`object-contain transition-all duration-500
-    ${i === currentIndex ? 'w-[500vw] h-[500vw] scale-125 z-50' : 'w-[100vw] h-[100vw]'}
-  `}
+                ${i === currentIndex ? 'w-[500vw] h-[500vw] scale-125 z-50' : 'w-[100vw] h-[100vw]'}
+              `}
             />
-
           </div>
-
-
         ))}
       </div>
 
-      {/* Caption */}
-      <div className="mt-14 text-center">
-        <h2 className="text-white text-3xl font-bold">
+      {/* Caption with animation */}
+      <div className="mt-14 text-center overflow-hidden">
+        <h2 
+          key={currentIndex} // This forces re-render and animation restart
+          className="text-white text-3xl font-bold slide-up-animation"
+        >
           {slides[currentIndex].text}
         </h2>
       </div>
