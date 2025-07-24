@@ -11,15 +11,19 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Home />
-      <About />
-      <Thirdp />
-      <Page4 />
-      <Hero />
+
+      {/* Wrap all your content between Navbar and Footer in a <main> tag */}
+      <main className="flex-grow">
+        <Home />
+        <About />
+        <Thirdp />
+        <Page4 />
+        <Hero />
+      </main>
+
       <Footer />
-
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

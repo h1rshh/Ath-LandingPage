@@ -46,14 +46,14 @@ function Navbar() {
           {/* 2. Desktop Navigation Links */}
           {/* `hidden md:flex`: The links are hidden by default and become visible on medium screens and up. */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-25">
               {navLinks.map((link) => (
                 <a
                   key={link.title}
                   href={link.href}
                   // `transition-colors` makes the hover effect smooth.
                   // `hover:text-red-500` applies the red color on hover.
-                  className="text-white hover:text-red-500 transition-colors duration-300 font-bold"
+                  className="text-white text-xl hover:text-red-500 transition-colors duration-280 font-bold"
                 >
                   {link.title}
                 </a>

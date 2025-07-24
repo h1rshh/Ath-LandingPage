@@ -8,16 +8,7 @@ const Home = () => {
       style={{ backgroundImage: `url(${Heroimg})` }}
     >
       {/* First overlay - Red with reduced opacity */}
-      <div
-        className="absolute inset-0"
-        style={{ background: `rgba(166, 13, 13, 0.4)` }}
-      ></div>
-
-      {/* Second overlay - Black */}
-      <div
-        className="absolute inset-0"
-        style={{ background: `rgba(0, 0, 0, 0.3)` }}
-      ></div>
+     
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 font-inter">
