@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from '/src/assets/ath_logo.png'; // Make sure this path is correct
-import athFooter from '/src/assets/ath_footer.png'; // adjust path as needed
+import logo from '/src/assets/ath_logo.png'; // check if the image path is correct
+import athFooter from '/src/assets/ath_footer.png'; // check this image exists
 
-// Footer link sections (data-driven)
 const footerSections = [
   {
     title: 'Product',
@@ -38,22 +37,13 @@ const footerSections = [
     ],
   },
 ];
-{/* Big footer image below link sections */}
-<div className="relative mt-16 h-48 w-full overflow-hidden">
-  <img
-    src={athFooter}
-    alt="Athlyn Footer Logo"
-    className="absolute bottom-0 right-0 opacity-10 w-full h-full object-contain"
-  />
-</div>
 
-// Social icons as inline SVG
 const socialIcons = [
   {
     name: 'X',
     href: '#',
     icon: (
-      <svg className="w-6 h-6 mt-3 "  fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 mt-3" fill="currentColor" viewBox="0 0 24 24">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
       </svg>
     ),
@@ -89,77 +79,73 @@ const socialIcons = [
 
 function Footer() {
   return (
-  <footer className="bg-[#252525] text-gray-300">
-    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-        {/* {/* Logo and description */}
-<div className="lg:col-span-2 flex flex-col -ml-27 mt-10 items-start text-left">
-  <a href="#" className="flex items-center space-x--2">
-    <img src={logo} alt="ATH Logo" className="h-11 w-auto" />
-    <span className="text-3xl font-bold" style={{ color: '#d00505' }}>thlyn</span>
-  </a>
-  <p className="mt-5 -ml-1 text-sm max-w-xs">
-    Empowering athletes to reach their full potential through AI-driven insights and community support.
-  </p>
-  <div className="mt-7 -ml-1 flex space-x-12">
-    {socialIcons.map((social) => (
-      <a
-        key={social.name}
-        href={social.href}
-        className="text-gray-400 hover:text-white transition-colors duration-300"
-      >
-        <span className="sr-only">{social.name}</span>
-        {social.icon}
-      </a>
-    ))}
-  </div>
-</div>
+    <footer className="bg-[#252525] text-gray-300 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
 
-
-        {/* Footer navigation links */}
-        {footerSections.map((section) => (
-          <div key={section.title}>
-            <h3 className="text-sm font-semibold text-white tracking-wider uppercase">
-              {section.title}
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {section.links.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-base text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    {link.name}
-                  </a>
-                </li>
+          {/* Logo and description */}
+          <div className="lg:col-span-2 flex flex-col mt-10 items-start text-left">
+            <a href="#" className="flex items-center space-x-2">
+              <img src={logo} alt="ATH Logo" className="h-11 w-auto" />
+              <span className="text-3xl font-bold" style={{ color: '#d00505' }}>thlyn</span>
+            </a>
+            <p className="mt-5 text-sm max-w-xs">
+              Empowering athletes to reach their full potential through AI-driven insights and community support.
+            </p>
+            <div className="mt-7 flex space-x-6">
+              {socialIcons.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                >
+                  <span className="sr-only">{social.name}</span>
+                  {social.icon}
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
-        ))}
+
+          {/* Footer navigation links */}
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h3 className="text-sm font-semibold text-white tracking-wider uppercase">
+                {section.title}
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-base text-gray-400 hover:text-white transition-colors duration-300"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-{/* Big footer image below link sections */}
-<div className="relative mt-5 h-72 ml-76 w-full overflow-hidden">
-  <img
-    src={athFooter}
-    alt="Athlyn Footer Logo"
-    className="absolute bottom-0 right-0 opacity-10 w-[150%] h-[96%] object-contain"
-  />
-</div>
 
+      {/* Footer background image */}
+      <div className="relative mt-5 h-72 w-full overflow-hidden">
+        <img
+          src={athFooter}
+          alt="Athlyn Footer Logo"
+          className="absolute bottom-0 right-0 opacity-10 w-full h-full object-contain"
+        />
+      </div>
 
-{/* Copyright Section */}
-<div className="py-6 text-left px-4 ml-5">
-  <p className="text-md text-gray-400">
-    @2025 <span className="text-gray">Athlyn</span>. All rights reserved.
-  </p>
-</div>
-
-
-  </footer>
-);
-
-  
+      {/* Copyright */}
+      <div className="py-6 px-4 text-left">
+        <p className="text-md text-gray-400">
+          © 2025 <span className="text-white font-semibold">Athlyn</span>. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
