@@ -53,19 +53,19 @@ const Page4 = () => {
       `}</style>
 
       {/* Slides wrapper */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-4 px-2 z-30">
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-4 px-2 z-3000">
         {visibleSlides(currentIndex).map((i, idx) => (
           <div
             key={i}
             className={`relative flex-shrink-0 rounded-2xl flex justify-center items-center transition-all duration-700 ease-in-out
               ${i === currentIndex
-                ? 'w-[40vw] h-[45vh] scale-110 z-20 -translate-y-6 shadow-2xl'
-                : 'w-[25vw] h-[40vh] scale-95 z-10 translate-y-2'}
+                ? 'w-[40vw] h-[40vh] scale-110 z-20 -translate-y-14 -translate-x-6 shadow-2xl'
+                : 'w-[28vw] h-[30vh] scale-95 z-10 -translate-y-12 -translate-x-4'}
             `}
             style={{
               background: i === currentIndex
                 ? 'linear-gradient(to bottom, #FF4C4C, #C80505)'
-                : 'linear-gradient(to bottom, #C80505, #333333)'
+                : 'linear-gradient(to bottom, #C80505, #1A1A1A)'
             }}
           >
             <img
@@ -80,7 +80,7 @@ const Page4 = () => {
       </div>
 
       {/* Caption with animation */}
-      <div className="mt-14 text-center overflow-hidden">
+      <div className="mt-25 text-center overflow-hidden">
         <h2 
           key={currentIndex} // This forces re-render and animation restart
           className="text-white text-3xl font-bold slide-up-animation"
