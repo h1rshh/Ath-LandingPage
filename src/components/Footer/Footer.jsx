@@ -84,12 +84,12 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
 
           {/* Logo and description */}
-          <div className="lg:col-span-2 flex flex-col mt-10 items-start text-left">
+          <div className="lg:col-span-2 flex flex-col mt-10 -ml-25 items-start text-left">
             <a href="#" className="flex items-center space-x-2">
               <img src={logo} alt="ATH Logo" className="h-11 w-auto" />
-              <span className="text-3xl font-bold" style={{ color: '#d00505' }}>thlyn</span>
+              <span className="text-4xl font-bold -ml-2" style={{ color: '#d00505' }}>thlyn</span>
             </a>
-            <p className="mt-5 text-sm max-w-xs">
+            <p className="mt-5 text-sm  max-w-xs">
               Empowering athletes to reach their full potential through AI-driven insights and community support.
             </p>
             <div className="mt-7 flex space-x-6">
@@ -130,7 +130,7 @@ function Footer() {
       </div>
 
       {/* Footer background image */}
-      <div className="relative mt-5 h-72 w-full overflow-hidden">
+      <div className="relative -mt-7 h-72 w-full ml-68 overflow-hidden">
         <img
           src={athFooter}
           alt="Athlyn Footer Logo"
@@ -139,9 +139,9 @@ function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="py-6 px-4 text-left">
+      <div className="py-6 px-4 text-left ml-8">
         <p className="text-md text-gray-400">
-          © 2025 <span className="text-white font-semibold">Athlyn</span>. All rights reserved.
+          © 2025 <span className="text-grey">Athlyn</span>. All rights reserved.
         </p>
       </div>
     </footer>
