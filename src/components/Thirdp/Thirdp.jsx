@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import hero1 from "../../assets/White_Phone_Mockup.png";
 import hero2 from "../../assets/Black_Phone_Mockup.png";
 import connectBg from "../../assets/Connect_pg3.jpg";
+import overlayImg from "../../assets/overlay.png";
 
 const slides = [
   {
@@ -59,24 +60,36 @@ const Thirdp = () => {
   const getIndex = (offset) => (current + offset + slides.length) % slides.length;
 
   return (
-    <section className="relative w-full h-[120vh] bg-black flex items-center justify-center overflow-visible">
-
-  <div
-    className="absolute inset-0 bg-cover bg-center scale-100"
-    style={{ backgroundImage: `url(${connectBg})` }}
-  />
-  
-  {/* Linear gradient overlay */}
-  <div 
-    className="absolute inset-0"
-    style={{ 
-      background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))` 
+    <section className="relative w-full h-[120vh] flex items-center justify-center overflow-visible">
+    
+    <div className="absolute inset-0 w-full h-full z-0">
+  {/* Background Image */}
+  <img
+    src={connectBg}
+    alt="Background"
+    className="w-full h-full object-cover"
+    style={{
+      aspectRatio: "9 / 16", // optional, remove if unnecessary
     }}
   />
 
+  {/* Overlay Image */}
+  <img
+    src={overlayImg}
+    alt="Overlay"
+    className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
+    style={{
+      mixBlendMode: "overlay", // or try "multiply", "soft-light", etc.
+      opacity: 20, // ✅ CONTROL THIS for filter strength
+      zIndex: 20,
+    }}
+  />
+</div>
+
+
   <div className="relative z-10 flex flex-col md:flex-row justify-between items-center px-10 w-full max-w-7xl mx-auto h-full">
     {/* Text Content */}
-    <div className="text-white md:w-1/2 space-y-6 pl-25 flex flex-col justify-center h-full">
+    <div className="text-white md:w-1/2 space-y-6 pl-25 flex flex-col justify-center h-full md:pt-12">
       <h1 className="text-4xl md:text-5xl font-bold">
         {slides[current].heading}
       </h1>
@@ -100,16 +113,16 @@ const Thirdp = () => {
             : 200;  // going down
         const translateX = isCurrent ? "30%" : "150%"; // push blurred ones to right
 
-        const scale = isCurrent ? 1 : 0.5;
-        const opacity = isCurrent ? 1 : 0.4;
-        const blur = isCurrent ? "blur-0" : "blur-2xl";
+        const scale = isCurrent ? 1.2 : 0.5;
+        const opacity = isCurrent ? 1 : 0.5;
+        const blur = isCurrent ? "blur-0" : "blur-md";
 
         return (
           <img
             key={index}
             src={slides[index].image}
             alt="Slide"
-            className={`absolute transition-all duration-1000 ease-in-out ${blur}`}
+            className={`absolute transition-all duration-1000 ease-in-out transform ${blur}`}
             style={{
               zIndex,
               transform: `translate(${translateX}, ${translateY}px) scale(${scale})`,
