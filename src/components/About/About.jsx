@@ -1,37 +1,57 @@
 import React from 'react';
+
+// --- Asset Imports ---
+// Using the asset paths you provided.
 import mobileImg from "../../assets/mobile.png";
-import urlIcon from "../../assets/url.png"; // Make sure this icon exists
+import urlIcon from "../../assets/url.png";
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center justify-center bg-[#1A1A1A] text-white px-8 py-16 font-['Inter']">
-      <div className="flex w-full max-w-6xl items-center justify-between gap-6">
-        {/* Left: Image */}
-        <div className="w-1/2 flex justify-start">
-          <img src={mobileImg} alt="Mobile" className="w-72 h-auto" />
-        </div>
+    // The overflow-hidden class is important to clip the image that bleeds off-screen
+    <div className="bg-[#1A1A1A] text-white font-['Inter'] py-20 overflow-hidden">
+      {/* Main content container with padding */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
+          
+          {/* --- Left Section: Image --- */}
+          {/* --- MODIFICATION: Simplified to use a single composite image asset --- */}
+          {/* The negative margins are used to pull the image to the very left edge of the screen */}
+          <div className="lg:w-1/2 w-full flex justify-start -ml-16 sm:-ml-24 lg:-ml-48">
+            <img 
+              src={mobileImg} 
+              alt="Mobile app with sports balls" 
+              // The size and rotation are maintained to match the desired look
+              className="relative z-10 w-auto h-[550px] sm:h-[650px] transform -rotate-12" 
+            />
+          </div>
 
-        {/* Ellipse with icon */}
-        <div className="relative w-[117px] h-[117px] bg-[#1A1A1A] rounded-full shadow-[0_9px_23px_0_rgba(0,0,0,0.9),-9px_-9px_18px_0_rgba(42,42,42,0.9),9px_-9px_18px_0_rgba(0,0,0,0.2),-9px_9px_18px_0_rgba(0,0,0,0.2),-1px_-1px_2px_0_rgba(0,0,0,0.5),1px_1px_2px_0_rgba(42,42,42,0.3)] flex items-center justify-center mx-4">
-          <img src={urlIcon} alt="URL Icon" className="w-8 h-8" />
-        </div>
+          {/* --- Right Section: Text Content --- */}
+          <div className="lg:w-1/2 w-full">
+            {/* Icon in a subtle circle */}
+            <div className="w-16 h-16 bg-[#2a2a2a] rounded-full flex items-center justify-center shadow-lg mb-6">
+              <img src={urlIcon} alt="URL Icon" className="w-8 h-8" />
+            </div>
 
-        {/* Text Section */}
-        <div className="w-[309px] h-[234px] bg-[#1A1A1A] text-[#F5F5F5] px-4 py-2 space-y-3 shadow">
-          <h2 className="text-[24px] font-extrabold leading-[34px] tracking-wide whitespace-nowrap">
-            Get <span className="text-red-600">Connected</span>, Get <span className="text-red-600">Noticed</span>, Get <span className="text-red-600">Ahead</span>
-          </h2>
-          <p className="text-[16px] font-medium leading-[23px]">
-            Join a powerful network of athletes, coaches, and scouts. Build your profile and grow your reputation.
-          </p>
-          <p className="text-[16px] font-medium leading-[23px]">
-            Whether you're aiming for college teams, national leagues, or global recognition...
-          </p>
-          <p className="text-[16px] font-semibold">This is where your journey levels up.</p>
+            {/* Text content */}
+            <div className="space-y-6">
+              <h2 className="text-4xl font-extrabold leading-tight tracking-wide">
+                Get <span className="text-red-600">Connected</span>, Get <span className="text-red-600">Noticed</span>, Get <span className="text-red-600">Ahead</span>
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed max-w-lg">
+                Join a powerful network of athletes, coaches, and scouts. Build your athletic profile, showcase your training journey, share match highlights, and grow your reputation on and off the field.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed max-w-lg">
+                Whether you're aiming for college teams, national leagues, or global recognition...
+              </p>
+              <p className="text-xl font-semibold text-white">
+                This is where your journey levels up.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-
   );
 };
 

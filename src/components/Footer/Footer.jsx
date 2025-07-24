@@ -70,7 +70,8 @@ function Footer() {
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center space-x-2">
               <img src={logo} alt="ATH Company Logo" className="h-8 w-auto" />
-              <span className="font-bold text-xl text-white">Athlyn</span>
+              <span className="font-bold text-xl" style={{ color: '#d00505' }}>thlyn</span>
+
             </a>
             <p className="mt-4 text-sm max-w-xs">
               Empowering athletes to reach their full potential through AI-driven insights and community support.

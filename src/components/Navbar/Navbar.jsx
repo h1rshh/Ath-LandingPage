@@ -63,7 +63,8 @@ function Navbar() {
 
           {/* 3. Desktop "Get Started" Button */}
           <div className="hidden md:block">
-            <button className="bg-white text-black font-semibold py-2 px-5 rounded-lg hover:bg-red-600 hover:text-white transition-all duration-300">
+            {/* --- MODIFICATION --- Changed rounded-lg to rounded-full and adjusted padding */}
+            <button className="bg-white text-black font-semibold py-2 px-6 rounded-full hover:bg-red-600 hover:text-white transition-all duration-300">
               Get Started
             </button>
           </div>
@@ -112,7 +113,8 @@ function Navbar() {
           </div>
           {/* We also include the "Get Started" button in the mobile menu for consistency. */}
           <div className="pt-4 pb-3 px-2">
-            <button className="w-full bg-white text-black font-semibold py-2 px-5 rounded-lg hover:bg-red-600 hover:text-white transition-all duration-300 font-semibold">
+            {/* --- MODIFICATION --- Changed rounded-lg to rounded-full */}
+            <button className="w-full bg-white text-black font-semibold py-2 px-5 rounded-full hover:bg-red-600 hover:text-white transition-all duration-300">
               Get Started
             </button>
           </div>
