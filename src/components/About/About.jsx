@@ -29,7 +29,7 @@ const About = () => {
           {/* Text Content */}
           <div className="bg-[#1A1A1A] text-[#F5F5F5] px-4 lg:px-6 space-y-6 md:ml-0 md:-translate-x-24 md:-translate-y-2 ">
 
-<h2 className="text-3xl md:text-3xl font-medium leading-[143%] tracking-[0.01em] whitespace-nowrap">
+<h2 className="text-3xl md:text-4xl font-medium leading-[143%] tracking-[0.01em] whitespace-nowrap">
 
               <span className="font-bold">Get</span> <span className="text-red-600 font-bold">Connected</span>,
               <span className="font-bold"> Get</span> <span className="text-red-600 font-bold">Noticed</span>,
