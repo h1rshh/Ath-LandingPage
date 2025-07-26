@@ -26,30 +26,30 @@ const About = () => {
             <img src={urlIcon} alt="URL Icon" className="w-[40%] h-[40%]" />
           </div>
 
-          {/* Text Content */}
-          <div className="bg-[#1A1A1A] text-[#F5F5F5] px-4 lg:px-6 space-y-6 md:ml-0 md:-translate-x-24 md:-translate-y-2 ">
+ {/* Text Content */}
+ <div className="bg-[#1A1A1A] text-[#F5F5F5] px-4 lg:px-6 space-y-6 md:ml-0 md:-translate-x-24 md:-translate-y-2 ">
 
-<h2 className="text-3xl md:text-4xl font-medium leading-[143%] tracking-[0.01em] whitespace-nowrap">
+<h2 className="text-2xl md:text-4xl font-medium leading-[143%] tracking-[0.01em] whitespace-nowrap ">
 
-              <span className="font-bold">Get</span> <span className="text-red-600 font-bold">Connected</span>,
-              <span className="font-bold"> Get</span> <span className="text-red-600 font-bold">Noticed</span>,
-              <span className="font-bold"> Get</span> <span className="text-red-600 font-bold">Ahead</span>
+              <span className="font-extrabold">Get</span> <span className="text-red-600 font-extrabold">Connected</span>,
+              <span className="font-extrabold"> Get</span> <span className="text-red-600 font-extrabold">Noticed</span>,
+              <span className="font-extrabold"> Get</span> <span className="text-red-600 font-extrabold">Ahead</span>
             </h2>
 
-<p className="text-[87%] md:text-[24p%] font-medium leading-relaxed mt-6">
-
+            <p className="text-sm md:text-lg lg:text-lg font-medium leading-relaxed mt-6 text-nowrap">
   Join a powerful network of athletes, coaches, and scouts. Build your athletic<br />
   profile, showcase your training journey, share match highlights, and grow<br />
   your reputation on and off the field.
 </p>
-<p className="text-[87%] md:text-[24p%] font-medium leading-relaxed mt-6">
+<p className="text-sm md:text-lg lg:text-lg font-medium leading-relaxed mt-6 text-nowrap">
   Whether you're aiming for college teams, national leagues, or global<br />
   recognition...
 </p>
-<p className="text-[87%] md:text-[24p%] font-medium leading-relaxed mt-6">
+<p className="text-sm md:text-lg lg:text-lg font-extrabold leading-relaxed mt-6 test-nowrap">
   This is where your journey levels up.
 </p>
        </div>
+
         </div>
       </div>
     </div>
