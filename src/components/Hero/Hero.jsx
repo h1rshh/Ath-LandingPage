@@ -22,9 +22,9 @@ function Hero() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
               From <span className="text-[#c80505]">Field</span> to <span className="text-[#c80505]">Future</span>
             </h1>
-            <p className="mt-4 text-lg sm:text-xl text-gray-300">
+            <h2 className="mt-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold sm:text-xl text-gray-300">
               Let Athlyn take you there
-            </p>
+            </h2>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@ function Hero() {
         <img 
           src={ballImage} 
           alt="A basketball representing the future of sports" 
-          className="w-auto h-[125%] max-w-none transform translate-x-[40%]"
+          className="w-auto h-[125%] max-w-none transform translate-x-[25%]"
         />
       </div>
     </section>
