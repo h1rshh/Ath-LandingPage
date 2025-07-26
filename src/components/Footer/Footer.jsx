@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '/src/assets/ath_logo.png'; // check if the image path is correct
-import athFooter from '/src/assets/ath_footer.png'; // check this image exists
+import logo from '/src/assets/Footerlogo.png'; 
+import athFooter from '/src/assets/ath_footer.png'; 
 
 const footerSections = [
   {
@@ -38,6 +38,7 @@ const footerSections = [
   },
 ];
 
+//Add social links here
 const socialIcons = [
   {
     name: 'X',
@@ -87,7 +88,6 @@ function Footer() {
           <div className="lg:col-span-2 flex flex-col mt-10 -ml-25 items-start text-left">
             <a href="#" className="flex items-center space-x-2">
               <img src={logo} alt="ATH Logo" className="h-11 w-auto" />
-              <span className="text-4xl font-bold -ml-2" style={{ color: '#d00505' }}>thlyn</span>
             </a>
             <p className="mt-5 text-sm  max-w-xs">
               Empowering athletes to reach their full potential through AI-driven insights and community support.
