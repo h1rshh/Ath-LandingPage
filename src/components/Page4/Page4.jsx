@@ -8,7 +8,7 @@ import img6 from '../../assets/image6.png';
 
 const slides = [
   { image: img1, text: "Showcase verified performance data" },
-  { image: img2, text: "Connect within a unifies sports network" },
+  { image: img2, text: "Connect within a unified sports network" },
   { image: img3, text: "Turn every training session into recognized progress" },
   { image: img4, text: "Get discovered by scouts" },
   { image: img5, text: "Boost your visibility in your sport" },
@@ -33,8 +33,8 @@ const Page4 = () => {
   };
 
   return (
-    <div className="relative bg-[#1a1a1a] pt-70 pb-20 overflow-visible w-full">
-      {/* Add CSS animation styles */}
+    <div className="relative bg-[#1a1a1a] pt-40 pb-28 -mt-32 overflow-visible w-full z-10">
+      {/* Slide Animation */}
       <style jsx>{`
         @keyframes slideUpIn {
           0% {
@@ -46,21 +46,21 @@ const Page4 = () => {
             opacity: 1;
           }
         }
-        
+
         .slide-up-animation {
           animation: slideUpIn 0.6s ease-out;
         }
       `}</style>
 
-      {/* Slides wrapper */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-4 px-2 z-3000">
-        {visibleSlides(currentIndex).map((i, idx) => (
+      {/* Slide Cards */}
+      <div className="relative z-10 flex justify-center items-end space-x-4">
+        {visibleSlides(currentIndex).map((i) => (
           <div
             key={i}
-            className={`relative flex-shrink-0 rounded-2xl flex justify-center items-center transition-all duration-700 ease-in-out
+            className={`relative flex-shrink-0 rounded-xl overflow-visible flex justify-center items-end transition-all duration-700 ease-in-out
               ${i === currentIndex
-                ? 'w-[40vw] h-[40vh] scale-110 z-20 -translate-y-14 -translate-x-6 shadow-2xl'
-                : 'w-[28vw] h-[30vh] scale-95 z-10 -translate-y-12 -translate-x-4'}
+                ? 'w-[40vw] h-[40vh] scale-110 z-20 -translate-y-50 shadow-2xl'
+                : 'w-[28vw] h-[30vh] scale-95 z-10 -translate-y-65'}
             `}
             style={{
               background: i === currentIndex
@@ -68,22 +68,27 @@ const Page4 = () => {
                 : 'linear-gradient(to bottom, #C80505, #1A1A1A)'
             }}
           >
-            <img
-              src={slides[i].image}
-              alt={`Slide ${i}`}
-              className={`object-contain transition-all duration-500
-                ${i === currentIndex ? 'w-[500vw] h-[500vw] scale-125 z-50' : 'w-[100vw] h-[100vw]'}
-              `}
-            />
+            <div className="relative w-full h-full flex justify-center items-end overflow-visible">
+              <img
+                src={slides[i].image}
+                alt={`Slide ${i}`}
+                className={`absolute transition-all duration-500
+                  ${i === currentIndex
+                    ? 'w-[90%] scale-160 -top-[8%] z-50'
+                    : 'w-[75%] scale-120 -top-[0%] z-30'}
+                `}
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Caption with animation */}
-      <div className="mt-25 text-center overflow-hidden">
+      {/* Caption */}
+      <div className="-mt-25 text-center">
         <h2 
-          key={currentIndex} // This forces re-render and animation restart
-          className="text-white text-3xl font-bold slide-up-animation"
+          key={currentIndex}
+          className="text-white text-3xl font-bold slide-up-animation ease-in-out"
         >
           {slides[currentIndex].text}
         </h2>
