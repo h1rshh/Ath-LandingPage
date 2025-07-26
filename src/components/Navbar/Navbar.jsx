@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
-
-// --- Best Practice: Asset Management ---
-// We import the logo directly into the component. This allows Vite to bundle the image
-// and handle it efficiently. If the image path ever changes, you only need to update it here.
 import logo from '../../assets/ath_logo.png';
 
-
-// --- Best Practice: Data-Driven UI ---
-// Navigation links are stored in an array of objects. This is highly maintainable.
-// To add, remove, or reorder a link, you just modify this array.
-// You don't have to touch the JSX, which reduces the risk of breaking the layout.
 const navLinks = [
   { title: 'Demo', href: '#' },
   { title: 'Features', href: '#' },
@@ -18,9 +9,6 @@ const navLinks = [
 ];
 
 function Navbar() {
-  // --- State Management for Responsiveness ---
-  // We use the `useState` hook to manage the open/closed state of the mobile menu.
-  // This is a fundamental concept in React for handling component-level state.
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -45,8 +33,8 @@ function Navbar() {
 
           {/* 2. Desktop Navigation Links */}
           {/* `hidden md:flex`: The links are hidden by default and become visible on medium screens and up. */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-25">
+          <div className="hidden md:flex items-center space-x-10">
+            <div className="flex items-baseline space-x-25">
               {navLinks.map((link) => (
                 <a
                   key={link.title}
