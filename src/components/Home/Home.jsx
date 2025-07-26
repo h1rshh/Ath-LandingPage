@@ -16,10 +16,10 @@ const Home = () => {
           From Passion to Profession<br />
           From Field to Future
         </h1>
-        <p className="mt-4 text-white italic text-lg">
+        <p className="mt-4 text-white italic font-bold text-lg">
           ~ Connecting athletes to opportunity ~
         </p>
-        <button className="mt-6 px-6 py-3 bg-red-700 text-white font-semibold rounded-full hover:bg-green-400 transition duration-300">
+        <button className="mt-6 px-6 py-3 bg-[#C80505] text-white font-semibold rounded-full hover:bg-[#A40202] transition duration-300">
   Join the waitlist
 </button>
 
