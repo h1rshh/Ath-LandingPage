@@ -1,5 +1,8 @@
 import React from 'react';
-import Heroimg from '/src/assets/Heroimg.png'; // Make sure path is correct
+import Heroimg from '/src/assets/Heroimg.png';
+import { Link } from 'react-router-dom';
+import WaitlistPage from '../WaitList/WaitlistPage';
+
 
 const Home = () => {
   return (
@@ -19,9 +22,11 @@ const Home = () => {
         <p className="mt-4 text-white italic font-bold text-lg">
           ~ Connecting athletes to opportunity ~
         </p>
-        <button className="mt-6 px-6 py-3 bg-[#C80505] text-white font-semibold rounded-full hover:bg-[#A40202] transition duration-300">
-  Join the waitlist
-</button>
+        <Link to="/waitlist">
+  <button className="mt-6 px-6 py-3 bg-[#C80505] text-white font-semibold rounded-full hover:bg-[#A40202] transition duration-300">
+    Join the waitlist
+  </button>
+</Link>
 
       </div>
     </section>
