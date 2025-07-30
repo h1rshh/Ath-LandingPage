@@ -1,5 +1,6 @@
 import React from 'react';
 import Heroimg from '/src/assets/Heroimg.png';
+import logo from '/src/assets/ath_logo.png';
 import { Link } from 'react-router-dom';
 import WaitlistPage from '../WaitList/WaitlistPage';
 
@@ -11,10 +12,16 @@ const Home = () => {
       style={{ backgroundImage: `url(${Heroimg})` }}
     >
       {/* First overlay - Red with reduced opacity */}
-     
+
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 font-inter">
+        {/* Logo only on mobile */}
+        <img
+          src={logo}
+          alt="ATH Logo"
+          className="block md:hidden mb-6 h-14 w-auto"
+        />
         <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
           From Passion to Profession<br />
           From Field to Future
@@ -23,11 +30,10 @@ const Home = () => {
           ~ Connecting athletes to opportunity ~
         </p>
         <Link to="/waitlist">
-  <button className="mt-6 px-6 py-3 bg-[#C80505] text-white font-semibold rounded-full hover:bg-[#A40202] transition duration-300">
-    Join the waitlist
-  </button>
-</Link>
-
+          <button className="mt-6 px-6 py-3 bg-[#C80505] text-white font-semibold rounded-full hover:bg-[#A40202] transition duration-300">
+            Join the waitlist
+          </button>
+        </Link>
       </div>
     </section>
   );

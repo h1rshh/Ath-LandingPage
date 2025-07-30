@@ -33,7 +33,7 @@ const Page4 = () => {
   };
 
   return (
-    <div className="relative bg-[#1a1a1a] pt-40 pb-28 -mt-32 overflow-visible w-full z-10">
+    <div className="relative bg-[#1a1a1a] pt-16 md:pt-40 pb-12 md:pb-28 overflow-visible w-full z-10">
       {/* Slide Animation */}
       <style jsx>{`
         @keyframes slideUpIn {
@@ -53,14 +53,13 @@ const Page4 = () => {
       `}</style>
 
       {/* Slide Cards */}
-      <div className="relative z-10 flex justify-center items-end space-x-4">
+      <div className="relative z-10 flex justify-center items-end space-x-2 md:space-x-4 -mt-4 md:mt-0">
         {visibleSlides(currentIndex).map((i) => (
           <div
             key={i}
-            className={`relative flex-shrink-0 rounded-xl overflow-visible flex justify-center items-end transition-all duration-700 ease-in-out
-              ${i === currentIndex
-                ? 'w-[40vw] h-[40vh] scale-110 z-20 -translate-y-50 shadow-2xl'
-                : 'w-[28vw] h-[30vh] scale-95 z-10 -translate-y-65'}
+            className={`relative flex-shrink-0 rounded-xl overflow-visible flex justify-center items-end transition-all duration-700 ease-in-out ${i === currentIndex
+              ? 'w-[58vw] h-[30vw] md:w-[40vw] md:h-[40vh] scale-110 z-20 -translate-y-16 md:-translate-y-50 shadow-2xl'
+              : 'w-[32vw] h-[18vw] md:w-[28vw] md:h-[30vh] scale-95 z-10 -translate-y-10 md:-translate-y-65'}
             `}
             style={{
               background: i === currentIndex
@@ -72,10 +71,9 @@ const Page4 = () => {
               <img
                 src={slides[i].image}
                 alt={`Slide ${i}`}
-                className={`absolute transition-all duration-500
-                  ${i === currentIndex
-                    ? 'w-[90%] scale-160 -top-[8%] z-50'
-                    : 'w-[75%] scale-120 -top-[0%] z-30'}
+                className={`absolute transition-all duration-500 ${i === currentIndex
+                  ? 'w-[90%] scale-125 -top-[8%] z-50'
+                  : 'w-[75%] scale-100 -top-[0%] z-30'}
                 `}
                 style={{ objectFit: 'contain' }}
               />
@@ -85,10 +83,10 @@ const Page4 = () => {
       </div>
 
       {/* Caption */}
-      <div className="-mt-25 text-center">
-        <h2 
+      <div className="-mt-10 md:-mt-25 text-center">
+        <h2
           key={currentIndex}
-          className="text-white text-3xl font-bold slide-up-animation ease-in-out"
+          className="text-white text-sm md:text-3xl font-bold slide-up-animation ease-in-out"
         >
           {slides[currentIndex].text}
         </h2>
