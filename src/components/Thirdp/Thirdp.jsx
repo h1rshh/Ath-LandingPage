@@ -89,7 +89,7 @@ const Thirdp = () => {
 
       <div className="relative z-10 flex flex-row items-start md:items-center gap-2 md:gap-10 px-2 md:px-10 w-full max-w-7xl mx-auto h-full">
         {/* Text Content */}
-        <div className="text-white w-1/2 space-y-2 md:space-y-6 flex flex-col justify-center h-full md:pt-12 items-start text-left md:pt-12 px-2 md:px-0">
+        <div className="text-white w-1/2 space-y-2 md:space-y-6 flex flex-col justify-center h-full items-start text-left md:pt-12 px-2 md:px-0">
           <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-5xl font-bold">
             {slides[current].heading}
           </h1>
