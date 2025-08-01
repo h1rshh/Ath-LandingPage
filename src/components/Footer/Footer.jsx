@@ -2,43 +2,6 @@ import React from 'react';
 import logo from '/src/assets/Footerlogo.png';
 import athFooter from '/src/assets/ath_footer.png';
 
-const footerSections = [
-  {
-    title: 'Product',
-    links: [
-      { name: 'Features', href: '#' },
-      { name: 'Watch Demo', href: '#' },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [
-      { name: 'About Us', href: '#' },
-      { name: 'Careers', href: '#' },
-      { name: 'Press', href: '#' },
-      { name: 'Contact', href: '#' },
-    ],
-  },
-  {
-    title: 'Resources',
-    links: [
-      { name: 'Blog', href: '#' },
-      { name: 'Help Center', href: '#' },
-      { name: 'Community', href: '#' },
-      { name: 'Partners', href: '#' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Cookie Policy', href: '#' },
-    ],
-  },
-];
-
-//Add social links here
 const socialIcons = [
   {
     name: 'X',
@@ -53,7 +16,7 @@ const socialIcons = [
     name: 'Instagram',
     href: '#',
     icon: (
-      <svg className="w-6.5 h-6.5 mt-3" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 mt-3" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.161 0-3.523.012-4.75.07-2.73.124-3.958 1.348-4.082 4.082-.058 1.226-.069 1.588-.069 4.75s.011 3.524.069 4.75c.124 2.734 1.352 3.958 4.082 4.082 1.227.058 1.589.069 4.75.069s3.523-.011 4.75-.069c2.73-.124 3.958-1.348 4.082-4.082.058-1.226.069-1.588.069-4.75s-.011-3.524-.069-4.75c-.124-2.734-1.352-3.958-4.082-4.082-1.227-.058-1.589-.069-4.75-.069zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm0 1.441a2.31 2.31 0 110 4.62 2.31 2.31 0 010-4.62zM18.336 4.99a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z" />
       </svg>
     ),
@@ -62,7 +25,7 @@ const socialIcons = [
     name: 'LinkedIn',
     href: '#',
     icon: (
-      <svg className="w-6.5 h-6.5 mt-3" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 mt-3" fill="currentColor" viewBox="0 0 24 24">
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 110-4.125 2.062 2.062 0 010 4.125zm1.777 13.019H3.56V9h3.554z" />
       </svg>
     ),
@@ -78,128 +41,39 @@ const socialIcons = [
   },
 ];
 
-
 function Footer() {
   return (
-    <footer className="bg-[#252525] text-gray-300 overflow-x-hidden">
-      <div className="max-w-7xl mx-auto py-8 md:py-12 px-2 sm:px-4 lg:px-8">
-        <div className="md:grid md:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8 flex flex-col">
-          {/* Logo, Socials, Description - Centered on mobile only */}
-          {/* Hide logo on mobile, show socials and description */}
-          <div className="lg:col-span-2 flex flex-col md:mt-10 md:-ml-25 items-start text-left md:items-start md:text-left mt-6 ml-0 md:block md:space-y-0 space-y-0">
-            <div className="flex flex-col items-center text-center md:items-start md:text-left w-full md:w-auto">
-              <a href="#" className="flex items-center justify-center md:justify-start mb-4 md:mb-0">
-                <img src={logo} alt="ATH Logo" className="h-12 md:h-11 w-auto" />
+    <footer className="relative bg-[#252525] text-gray-300">
+      <div className="max-w-6xl mx-auto py-12 px-4 flex flex-col md:flex-row items-start justify-between gap-8">
+        {/* Left section: Logo, description, socials */}
+        <div className="flex flex-col items-start">
+          <img src={logo} alt="ATH Logo" className="h-12 w-auto mb-4" />
+          <p className="text-sm text-gray-300 max-w-xs mb-4">
+            Empowering athletes to reach their full potential through AI-driven insights and community support.
+          </p>
+          <div className="flex space-x-6">
+            {socialIcons.map((social) => (
+              <a key={social.name} href={social.href} className="text-gray-400 hover:text-white transition-colors">
+                <span className="sr-only">{social.name}</span>
+                {social.icon}
               </a>
-              <div className="flex space-x-6 mb-4 md:mb-0 md:mt-7">
-                {socialIcons.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    <span className="sr-only">{social.name}</span>
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
-              <p className="text-sm md:text-sm max-w-xs md:max-w-xs text-gray-300 mb-0 md:mt-5">
-                Empowering athletes to reach their full potential through AI-driven insights and community support.
-              </p>
-            </div>
-          </div>
-
-          {/* Footer navigation links - custom mobile layout */}
-          <div className="w-full flex flex-col gap-6 md:hidden mt-8 ml-12">
-            <div className="flex flex-row w-full gap-6 justify-center">
-              {/* Product */}
-              <div className="w-1/2">
-                <h3 className="text-xs font-semibold text-white tracking-wider uppercase mb-2">Product</h3>
-                <ul className="space-y-2">
-                  {footerSections[0].links.map((link) => (
-                    <li key={link.name}>
-                      <a href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors duration-300">{link.name}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* Legal */}
-              <div className="w-1/2">
-                <h3 className="text-xs font-semibold text-white tracking-wider uppercase mb-2">Legal</h3>
-                <ul className="space-y-2">
-                  {footerSections[3].links.map((link) => (
-                    <li key={link.name}>
-                      <a href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors duration-300">{link.name}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="flex flex-row w-full gap-6 justify-center">
-              {/* Company */}
-              <div className="w-1/2">
-                <h3 className="text-xs font-semibold text-white tracking-wider uppercase mb-2">Company</h3>
-                <ul className="space-y-2">
-                  {footerSections[1].links.map((link) => (
-                    <li key={link.name}>
-                      <a href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors duration-300">{link.name}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* Resources */}
-              <div className="w-1/2">
-                <h3 className="text-xs font-semibold text-white tracking-wider uppercase mb-2">Resources</h3>
-                <ul className="space-y-2">
-                  {footerSections[2].links.map((link) => (
-                    <li key={link.name}>
-                      <a href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors duration-300">{link.name}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop/tablet grid layout */}
-          <>
-            {footerSections.map((section) => (
-              <div key={section.title} className="hidden md:block mt-6 md:mt-0">
-                <h3 className="text-xs md:text-sm font-semibold text-white tracking-wider uppercase">
-                  {section.title}
-                </h3>
-                <ul className="mt-3 md:mt-4 space-y-2 md:space-y-3">
-                  {section.links.map((link) => (
-                    <li key={link.name}>
-                      <a
-                        href={link.href}
-                        className="text-sm md:text-base text-gray-400 hover:text-white transition-colors duration-300"
-                      >
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             ))}
-          </>
+          </div>
+        </div>
+
+        {/* Right section: Background image (desktop only) */}
+        <div className="hidden md:block relative w-80 h-40">
+          <img
+            src={athFooter}
+            alt="Athlyn Footer"
+            className="absolute bottom-0 right-0 opacity-10 w-full h-full object-contain"
+          />
         </div>
       </div>
 
-      {/* Footer background image */}
-      <div className="relative -mt-4 md:-mt-7 h-36 md:h-72 w-full ml-0 md:ml-68 overflow-hidden hidden md:block">
-        <img
-          src={athFooter}
-          alt="Athlyn Footer Logo"
-          className="absolute bottom-0 right-0 opacity-10 w-full h-full object-contain"
-        />
-      </div>
-
       {/* Copyright */}
-      <div className="py-4 md:py-6 px-2 md:px-4 ml-0 md:ml-8 text-center md:text-left">
-        <p className="text-xs md:text-md text-gray-400">
-          © 2025 <span className="text-grey">Athlyn</span> - All rights reserved
-        </p>
+      <div className="text-center py-4 border-t border-gray-700 text-gray-400 text-xs md:text-sm">
+        © 2025 <span className="text-white">Athlyn</span> - All rights reserved
       </div>
     </footer>
   );

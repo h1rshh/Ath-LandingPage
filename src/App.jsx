@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
@@ -10,23 +10,49 @@ import Page4 from './components/Page4/Page4.jsx';
 import About from './components/About/About.jsx';
 import WaitlistPage from './components/WaitList/WaitlistPage.jsx';
 
+// Layout component to conditionally show Navbar and Footer
+const Layout = ({ children }) => {
+  const location = useLocation();
+  const hideHeaderFooter = location.pathname === '/waitlist';
+
+  return (
+    <>
+      {!hideHeaderFooter && <Navbar />}
+
+      <main className="flex-grow">{children}</main>
+
+      {!hideHeaderFooter && (
+        <div id="contact">
+          <Footer />
+        </div>
+      )}
+    </>
+  );
+};
+
 const App = () => {
   return (
     <Router>
-      <Navbar />
-
-      <main className="flex-grow">
+      <Layout>
         <Routes>
           {/* Route for homepage */}
           <Route
             path="/"
             element={
               <>
-                <Home />
-                <About />
-                <Thirdp />
-                <Page4 />
-                <Hero />
+                <div id="home">
+                  <Home />
+                </div>
+                <div id="about">
+                  <About />
+                </div>
+                <div id="features">
+                  <Thirdp />
+                </div>
+                {/* <Page4 /> */}
+                <div>
+                  <Hero />
+                </div>
               </>
             }
           />
@@ -34,9 +60,7 @@ const App = () => {
           {/* Route for waitlist page */}
           <Route path="/waitlist" element={<WaitlistPage />} />
         </Routes>
-      </main>
-
-      <Footer />
+      </Layout>
     </Router>
   );
 };

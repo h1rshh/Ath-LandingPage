@@ -1,19 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
 /* Hide border lines on mobile */
 @media (max-width: 767px) {
   .mobile-hide-border {
     display: none !important;
   }
 }
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import "tailwindcss";
 
 #root {
   @apply min-h-screen flex flex-col;
 }
 
-#root{
-    font-family: ;
+#root {
+  font-family: Inter;
 }
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
